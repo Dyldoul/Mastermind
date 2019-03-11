@@ -34,7 +34,7 @@ public class CodeGame {
     //Constructeur
 
     public CodeGame() {
-        this.nombreCaché = r.nextInt(999); //Choix du nombre aléatoire de 0 à 999
+        this.nombreCaché = r.nextInt(9999); //Choix du nombre aléatoire de 0 à 9999
     }
 
     //Méthodes
@@ -42,29 +42,29 @@ public class CodeGame {
     /**
      * Lance le jeu du code secret
      */
-    public void laucnhGame(){
+    public void launchGame(){
 
         System.out.println();
         System.out.println("NOMBRE SECRET ACTIVE");
         System.out.println("Serez-vous assez fort pour le trouver ?");
 
-        do {
+        do {//Boucle tans que l'on a pas trouvé le nombre secret
             System.out.println();
-            System.out.println("Veuillez entrer un nombre :");
+            System.out.println("Veuillez entrer un nombre : (entre 0 et 9999)");
             setRéponse(scan.nextInt());
 
-            if (getRéponse() > getNombreCaché()) {
+            if (getRéponse() > getNombreCaché()) {//Si réponse trop haute
 
                 System.out.println();
                 System.out.println("Vous êtes au dessus du nombre secret");
 
-            } else if (getRéponse() < getNombreCaché()) {
+            } else if (getRéponse() < getNombreCaché()) {//Si réponse trop bas
 
                 System.out.println();
                 System.out.println("Vous êtes en dessous du nombre secret");
             }
 
-        } while (getRéponse() != getNombreCaché());
+        } while (getRéponse() != getNombreCaché());//Condition de sortie
 
         System.out.println();
         System.out.println("Félicitation vous avez trouvé le nombre secret !");

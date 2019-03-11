@@ -24,19 +24,19 @@ public class Main {
                     do { // Lancement du jeu 1
 
                         CodeGame jeu = new CodeGame();
-                        jeu.laucnhGame();
+                        jeu.launchGame();
                         System.out.println();
                         System.out.println("Voulez-vous recommencer ? O/N");
                         scan.nextLine();
                         String str = scan.nextLine();
                         exit = str.charAt(0);
 
-                    } while (exit == 'N');
+                    } while (exit != 'N' && exit =='O'); //Boucle pour recommencer le jeu
 
                     break;
 
             }
-        } while (choixMenu != 2);
+        } while (choixMenu != 2);//Action pour sortir du menu de départ
 
         System.out.println("Au revoir ^^");
 
