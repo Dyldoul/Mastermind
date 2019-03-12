@@ -40,8 +40,6 @@ public class Main {
                         } while (reponse != jeu.getNombreCaché());//Condition de sortie du jeu
 
                         System.out.println();
-                        System.out.println("Félicitation vous avez trouvé le nombre secret !");
-                        System.out.println();
                         System.out.println("Voulez-vous recommencer ? O/N");
                         scan.nextLine();
                         String str = scan.nextLine();

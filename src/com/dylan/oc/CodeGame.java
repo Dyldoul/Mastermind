@@ -40,7 +40,7 @@ public class CodeGame {
     //Méthodes
 
     /**
-     * Lance le jeu du code secret
+     * Compare le nombre saisie avec le nombre caché
      */
     public void check(int reponseUtilisateur){
 
@@ -53,6 +53,12 @@ public class CodeGame {
 
                 System.out.println();
                 System.out.println("Vous êtes en dessous du nombre secret");
+
+        } else if (reponseUtilisateur == getNombreCaché()){
+
+            System.out.println();
+            System.out.println("Félicitation vous avez trouvé le nombre secret !");
+
         }
     }
 }
