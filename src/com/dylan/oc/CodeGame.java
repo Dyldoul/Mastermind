@@ -50,11 +50,11 @@ public class CodeGame {
 
             if ( chfrUser > chfrSec) {//Si réponse trop haute
 
-                System.out.print("+");
+                System.out.print("-");
 
             } else if ( chfrUser < chfrSec) {//Si réponse trop bas
 
-                System.out.print("-");
+                System.out.print("+");
 
             } else if (chfrUser == chfrSec){//Si réponse OK
 
