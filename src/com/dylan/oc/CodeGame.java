@@ -22,13 +22,6 @@ public class CodeGame {
         this.nombreCaché = nombreCaché;
     }
 
-    public int getReponseUtilisateur() {
-        return reponseUtilisateur;
-    }
-
-    public void setReponseUtilisateur(int reponseUtilisateur) {
-        this.reponseUtilisateur = reponseUtilisateur;
-    }
 
     //Constructeur
 
@@ -61,5 +54,7 @@ public class CodeGame {
 
         }
     }
+
+
 }
 
