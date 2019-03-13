@@ -33,8 +33,8 @@ public class Main {
 
                             System.out.println();
                             System.out.println("Veuillez entrer un nombre : (entre 0 et 9999)");
+                            System.out.println("--------------------------------------------------");
                             reponse = scan.nextInt();
-                            System.out.println();
                             jeu.check(reponse);
                             System.out.println();
 
