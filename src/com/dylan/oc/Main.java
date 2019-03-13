@@ -34,11 +34,15 @@ public class Main {
                             System.out.println();
                             System.out.println("Veuillez entrer un nombre : (entre 0 et 9999)");
                             reponse = scan.nextInt();
+                            System.out.println();
                             jeu.check(reponse);
+                            System.out.println();
 
 
-                        } while (reponse != jeu.getNombreCaché());//Condition de sortie du jeu
+                        } while (reponse != jeu.getNombreCache());//Condition de sortie du jeu
 
+                        System.out.println();
+                        System.out.println("Félicitation vous avez trouvé le nombre secret !");
                         System.out.println();
                         System.out.println("Voulez-vous recommencer ? O/N");
                         scan.nextLine();

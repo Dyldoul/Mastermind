@@ -7,26 +7,26 @@ public class CodeGame {
 
     Random r = new Random();//Création de la variable aléatoire
 
-    private int nombreCaché;//Code secret a trouvé
+    private int nombreCache;//Code secret a trouvé
     private int reponseUtilisateur;
 
 
 
     //Getters & Setters
 
-    public int getNombreCaché() {
-        return nombreCaché;
+    public int getNombreCache() {
+        return nombreCache;
     }
 
-    public void setNombreCaché(int nombreCaché) {
-        this.nombreCaché = nombreCaché;
+    public void setNombreCaché(int nombreCache) {
+        this.nombreCache = nombreCache;
     }
 
 
     //Constructeur
 
     public CodeGame() {
-        this.nombreCaché = r.nextInt(9999); //Choix du nombre aléatoire de 0 à 9999
+        this.nombreCache = r.nextInt(9999); //Choix du nombre aléatoire de 0 à 9999
 
     }
 
@@ -37,24 +37,33 @@ public class CodeGame {
      */
     public void check(int reponseUtilisateur){
 
-        if ( reponseUtilisateur > getNombreCaché()) {//Si réponse trop haute
+        String strNbrCache = Integer.toString(nombreCache);//Transforme le nombre secret en String
+        String strNbrUser = Integer.toString(reponseUtilisateur);//Transforme le nombre saisie en String
 
-                System.out.println();
-                System.out.println("Vous êtes au dessus du nombre secret");
+        for (int i = 1; i <= strNbrCache.length(); i++){//Boucle pour traité tout les caractère de la String
 
-        } else if ( reponseUtilisateur < getNombreCaché()) {//Si réponse trop bas
+            String chiffreSecret = strNbrCache.substring(i-1,i);//Prend 1 par 1 les caractère de la chaine strNbrCache
+            String chiffreUser = strNbrUser.substring(i-1,i);//Prend 1 par 1 les caractère de la chaine strNbrUser
 
-                System.out.println();
-                System.out.println("Vous êtes en dessous du nombre secret");
+            int chfrSec = Integer.parseInt(chiffreSecret);//Passe la String chiffreSecret en int
+            int chfrUser = Integer.parseInt(chiffreUser);//Passe la String chiffreUser en int
 
-        } else if (reponseUtilisateur == getNombreCaché()){
+            if ( chfrUser > chfrSec) {//Si réponse trop haute
 
-            System.out.println();
-            System.out.println("Félicitation vous avez trouvé le nombre secret !");
+                System.out.print("+");
+
+            } else if ( chfrUser < chfrSec) {//Si réponse trop bas
+
+                System.out.print("-");
+
+            } else if (chfrUser == chfrSec){//Si réponse OK
+
+                System.out.print("=");
+
+            }
 
         }
+
     }
-
-
 }
 
