@@ -43,8 +43,8 @@ public class CodeGame {
 
         for (int i = 0; i < strNbrCache.length(); i++){//Boucle pour traité tout les caractère de la String
 
-            String chiffreSecret = strNbrCache.substring(i,i+1);//Prend 1 par 1 les caractère de la chaine strNbrCache (ne marche pas si je met '1' en deuxième param)
-            String chiffreUser = strNbrUser.substring(i,i+1);//Prend 1 par 1 les caractère de la chaine strNbrUser
+            String chiffreSecret = strNbrCache.substring(i);//Prend 1 par 1 les caractère de la chaine strNbrCache
+            String chiffreUser = strNbrUser.substring(i);//Prend 1 par 1 les caractère de la chaine strNbrUser
 
             int chfrSec = Integer.parseInt(chiffreSecret);//Passe la String chiffreSecret en int
             int chfrUser = Integer.parseInt(chiffreUser);//Passe la String chiffreUser en int
