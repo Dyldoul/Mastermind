@@ -8,7 +8,7 @@ public class CodeGame {
     Random r = new Random();//Création de la variable aléatoire
 
     private int nombreCache;//Code secret a trouvé
-    private int reponseUtilisateur;
+
 
 
 
@@ -18,7 +18,7 @@ public class CodeGame {
         return nombreCache;
     }
 
-    public void setNombreCaché(int nombreCache) {
+    public void setNombreCache(int nombreCache) {
         this.nombreCache = nombreCache;
     }
 
@@ -26,7 +26,7 @@ public class CodeGame {
     //Constructeur
 
     public CodeGame() {
-        this.nombreCache = r.nextInt(9999); //Choix du nombre aléatoire de 0 à 9999
+        this.nombreCache = r.nextInt(9999); //Choix du nombre aléatoire de 00 à 99
 
     }
 
@@ -34,16 +34,17 @@ public class CodeGame {
 
     /**
      * Compare le nombre saisie avec le nombre caché
+     * @param reponseUtilisateur Nombre saisie par l'utilisateur
      */
     public void check(int reponseUtilisateur){
 
         String strNbrCache = Integer.toString(nombreCache);//Transforme le nombre secret en String
         String strNbrUser = Integer.toString(reponseUtilisateur);//Transforme le nombre saisie en String
 
-        for (int i = 1; i <= strNbrCache.length(); i++){//Boucle pour traité tout les caractère de la String
+        for (int i = 0; i < strNbrCache.length(); i++){//Boucle pour traité tout les caractère de la String
 
-            String chiffreSecret = strNbrCache.substring(i-1,i);//Prend 1 par 1 les caractère de la chaine strNbrCache
-            String chiffreUser = strNbrUser.substring(i-1,i);//Prend 1 par 1 les caractère de la chaine strNbrUser
+            String chiffreSecret = strNbrCache.substring(i,i+1);//Prend 1 par 1 les caractère de la chaine strNbrCache (ne marche pas si je met '1' en deuxième param)
+            String chiffreUser = strNbrUser.substring(i,i+1);//Prend 1 par 1 les caractère de la chaine strNbrUser
 
             int chfrSec = Integer.parseInt(chiffreSecret);//Passe la String chiffreSecret en int
             int chfrUser = Integer.parseInt(chiffreUser);//Passe la String chiffreUser en int
