@@ -13,7 +13,7 @@ public class Main {
 
         do { // Menu de Départ
             System.out.println("Bienvenue ! Que voulez-vous faire ?");
-            System.out.println("1 - Jouer au jeu du code secret");
+            System.out.println("1 - Code secret");
             System.out.println("2 - Quitter");
             System.out.println("---------------------------------------------------");
             choixMenu = scan.nextInt();

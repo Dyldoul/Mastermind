@@ -1,5 +1,7 @@
 package com.dylan.oc;
 
+import jdk.swing.interop.SwingInterOpUtils;
+
 import java.util.Random;
 
 
@@ -8,8 +10,7 @@ public class CodeGame {
     Random r = new Random();//Création de la variable aléatoire
 
     private int nombreCache;//Code secret a trouvé
-
-
+    private int nombreDeChiffre = 4;//Nombre de chiffre composant le nombre secret
 
 
     //Getters & Setters
@@ -22,11 +23,25 @@ public class CodeGame {
         this.nombreCache = nombreCache;
     }
 
+    public int getNombreDeChiffre() {
+        return nombreDeChiffre;
+    }
+
+    public void setNombreDeChiffre(int nombreDeChiffre) {
+        this.nombreDeChiffre = nombreDeChiffre;
+    }
 
     //Constructeur
 
     public CodeGame() {
-        this.nombreCache = r.nextInt(9999); //Choix du nombre aléatoire de 00 à 99
+
+
+        for (int i = 0; i < nombreDeChiffre; i++){//On ne dépasse pas la param utilisateur
+
+            int c = r.nextInt(9);//Donne un chiffre entre 0 et 9
+            nombreCache += c;//Rassemble les chiffre aléatoire pour formé un nombre
+
+        }
 
     }
 
@@ -40,6 +55,7 @@ public class CodeGame {
 
         String strNbrCache = Integer.toString(nombreCache);//Transforme le nombre secret en String
         String strNbrUser = Integer.toString(reponseUtilisateur);//Transforme le nombre saisie en String
+        String strIndication = "";//Initialisation de la ligne d'indication
 
         for (int i = 0; i < strNbrCache.length(); i++){//Boucle pour traité tout les caractère de la String
 
@@ -51,19 +67,31 @@ public class CodeGame {
 
             if ( chfrUser > chfrSec) {//Si réponse trop haute
 
-                System.out.print("-");
+                strIndication += "-";//Ajouter un -
 
             } else if ( chfrUser < chfrSec) {//Si réponse trop bas
 
-                System.out.print("+");
+                strIndication += "+";//Ajouter un +
 
             } else if (chfrUser == chfrSec){//Si réponse OK
 
-                System.out.print("=");
+                strIndication += "=";//Ajouter un =
 
             }
 
         }
+
+        System.out.println(strIndication);//Affiche la ligne composé de + - =
+
+    }
+
+    /**
+     * Choix du nombre de chiffre à trouver définit par l'utilisateur
+     * @param paramUtilisateur Nombre donnée par l'utilisateur
+     */
+    public void paramNbrChiffre(int paramUtilisateur){
+
+        this.nombreDeChiffre = paramUtilisateur;
 
     }
 }
