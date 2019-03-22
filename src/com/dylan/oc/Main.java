@@ -21,9 +21,7 @@ public class Main {
             switch (choixMenu) {
 
                 case 1:
-
                     CodeGame jeu = new CodeGame();
-
                     do {//Menu du jeu
 
                         System.out.println();
@@ -83,7 +81,7 @@ public class Main {
                                     System.out.println();
                                     System.out.println("Combien de chiffre voulez chercher ?");
                                     paramUtil = scan.nextInt();
-                                    jeu.setNombreDeChiffre(paramUtil);
+                                    jeu.paramUtilisateur(paramUtil);
                                     System.out.println("Vous aller devoir trouver " + jeu.getNombreDeChiffre() + " chiffres !");
 
                                 }

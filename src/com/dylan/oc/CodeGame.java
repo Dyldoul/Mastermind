@@ -21,9 +21,7 @@ public class CodeGame {
         return nombreDeChiffre;
     }
 
-    public void setNombreDeChiffre(int nombreDeChiffre) {
-        this.nombreDeChiffre = nombreDeChiffre;
-    }
+
 
     //Constructeur
 
@@ -40,6 +38,7 @@ public class CodeGame {
         }
 
         nombreCache = Integer.parseInt(strNombreCache);//Convertit la String en Integer
+
     }
 
     //Méthodes
@@ -79,6 +78,23 @@ public class CodeGame {
         }
 
         System.out.println(strIndication);//Affiche la ligne composé de + - =
+
+    }
+
+    public void paramUtilisateur(int nombreUtilisateur) {
+
+        this.nombreDeChiffre = nombreUtilisateur;
+        String strNombreCache = "";//String pour rassembler tout les chiffre aléatoire
+
+        for (int i = 0; i < nombreDeChiffre; i++){//On ne dépasse pas la param utilisateur
+
+            int c = r.nextInt(9);
+
+            strNombreCache += c;//Ajoute 1 par 1 les chiffre aléatoire a la String
+
+        }
+
+        nombreCache = Integer.parseInt(strNombreCache);//Convertit la String en Integer
 
     }
 
