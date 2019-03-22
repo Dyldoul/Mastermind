@@ -19,6 +19,13 @@ public class CodeGame {
         return nombreCache;
     }
 
+    public int getNombreDeChiffre() {
+        return nombreDeChiffre;
+    }
+
+    public void setNombreDeChiffre(int nombreDeChiffre) {
+        this.nombreDeChiffre = nombreDeChiffre;
+    }
 
     //Constructeur
 
@@ -77,14 +84,5 @@ public class CodeGame {
 
     }
 
-    /**
-     * Choix du nombre de chiffre à trouver définit par l'utilisateur
-     * @param paramUtilisateur Nombre donnée par l'utilisateur
-     */
-    public void paramNbrChiffre(int paramUtilisateur){
-
-        this.nombreDeChiffre = paramUtilisateur;
-
-    }
 }
 
