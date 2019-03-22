@@ -24,7 +24,7 @@ public class Main {
 
                     CodeGame jeu = new CodeGame();
 
-                    do {
+                    do {//Menu du jeu
 
                         System.out.println();
                         System.out.println("Que voulez-vous faire ?");
@@ -36,9 +36,9 @@ public class Main {
 
                         switch (choixMenu) {
 
-                            case 1:
+                            case 1:// Lancement du jeu 1
 
-                                do { // Lancement du jeu 1
+                                do {
                                     System.out.println("NOMBRE SECRET ACTIVE");
                                     System.out.println("Serez-vous assez fort pour le trouver ?");
 
@@ -68,7 +68,7 @@ public class Main {
 
                                 break;
 
-                            case 2:
+                            case 2: //Paramétrer le jeu
 
                                 System.out.println("Le nombre de chiffre a trouver est de " + jeu.getNombreDeChiffre());
                                 System.out.println("Voulez voulez vous le modifier ?");
@@ -91,11 +91,12 @@ public class Main {
                                 System.out.println();
 
                                 break;
-                        }
+
+                        }//Fin du switch du menu du jeu
 
                     } while (choixMenu != 3);//Sortir du menu du jeu CodeGame
 
-            }
+            }//Fin du switch du menu de départ
 
         } while (choixMenu != 2);//Sortir du menu de départ
 
