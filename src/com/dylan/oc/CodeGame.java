@@ -10,7 +10,7 @@ public class CodeGame {
     Random r = new Random();//Création de la variable aléatoire
 
     private int nombreCache;//Code secret a trouvé
-    private int nombreDeChiffre = 4;//Nombre de chiffre composant le nombre secret
+    private int nombreDeChiffre = 4;//Nombre de chiffre composant le nombre secret par défault
 
 
     //Getters & Setters
@@ -19,30 +19,22 @@ public class CodeGame {
         return nombreCache;
     }
 
-    public void setNombreCache(int nombreCache) {
-        this.nombreCache = nombreCache;
-    }
-
-    public int getNombreDeChiffre() {
-        return nombreDeChiffre;
-    }
-
-    public void setNombreDeChiffre(int nombreDeChiffre) {
-        this.nombreDeChiffre = nombreDeChiffre;
-    }
 
     //Constructeur
 
     public CodeGame() {
 
+        String strNombreCache = "";//String pour rassembler tout les chiffre aléatoire
 
         for (int i = 0; i < nombreDeChiffre; i++){//On ne dépasse pas la param utilisateur
 
-            int c = r.nextInt(9);//Donne un chiffre entre 0 et 9
-            nombreCache += c;//Rassemble les chiffre aléatoire pour formé un nombre
+            int c = r.nextInt(9);
+
+            strNombreCache += c;//Ajoute 1 par 1 les chiffre aléatoire a la String
 
         }
 
+        nombreCache = Integer.parseInt(strNombreCache);//Convertit la String en Integer
     }
 
     //Méthodes
@@ -73,7 +65,7 @@ public class CodeGame {
 
                 strIndication += "+";//Ajouter un +
 
-            } else if (chfrUser == chfrSec){//Si réponse OK
+            } else {//Si réponse OK
 
                 strIndication += "=";//Ajouter un =
 

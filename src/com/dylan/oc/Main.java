@@ -49,11 +49,12 @@ public class Main {
                         String str = scan.nextLine();
                         exit = str.charAt(0);
 
-                    } while (exit != 'N' && exit =='O'); //Recommencer ou non le jeu
+                    } while (exit != 'N' && exit == 'O'); //Recommencer ou non le jeu
 
                     System.out.println();
 
                     break;
+
             }
 
         } while (choixMenu != 2);//Sortir du menu de départ
