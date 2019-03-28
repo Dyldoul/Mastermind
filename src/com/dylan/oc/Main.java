@@ -61,7 +61,7 @@ public class Main {
                                                 System.out.println("Veuillez entrer un nombre a " + jeu.getNombreDeChiffre() + " chiffres");
                                                 System.out.println("--------------------------------------------------");
                                                 reponse = scan.nextInt();
-                                                jeu.check(reponse);
+                                                jeu.checkOrdi(reponse);
                                                 System.out.println();
 
 

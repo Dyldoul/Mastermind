@@ -53,13 +53,23 @@ public class CodeGame {
 
     }
 
+    /**
+     * L'utilisateur choisis le code secret
+     * @param codeUtil Nombre choisit
+     */
+    public void modDefenseur(int codeUtil){
+
+        this.nombreCache = codeUtil;
+
+    }
+
 
 
     /**
      * Compare le nombre saisie avec le nombre caché
      * @param reponseUtilisateur Nombre saisie par l'utilisateur
      */
-    public void check(int reponseUtilisateur){
+    public void checkOrdi(int reponseUtilisateur){
 
         String strNbrCache = Integer.toString(nombreCache);//Transforme le nombre secret en String
         String strNbrUser = Integer.toString(reponseUtilisateur);//Transforme le nombre saisie en String
@@ -91,6 +101,16 @@ public class CodeGame {
 
         System.out.println(strIndication);//Affiche la ligne composé de + - =
         nombreEssai --;
+
+    }
+
+    /**
+     * L'utilisateur indique a l'ordinateur les + - =
+     * @param reponseOrdi Le nombre donné par l'ordinateur
+     */
+    public void checkUser(int reponseOrdi){
+
+
 
     }
 
