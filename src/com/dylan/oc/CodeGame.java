@@ -9,6 +9,7 @@ public class CodeGame {
 
     private int nombreCache;//Code secret a trouvé
     private int nombreDeChiffre = 4;//Nombre de chiffre composant le nombre secret par défault
+    private int nombreEssai = 10;//Nombre d'éssais par défault
 
 
     //Getters & Setters
@@ -21,7 +22,9 @@ public class CodeGame {
         return nombreDeChiffre;
     }
 
-
+    public int getNombreEssai() {
+        return nombreEssai;
+    }
 
     //Constructeurs
 
@@ -31,6 +34,9 @@ public class CodeGame {
 
     //Méthodes
 
+    /**
+     * L'ordinateur créer un nombre aléatoire
+     */
     public void modChallenger(){
 
             String strNombreCache = "";//String pour rassembler tout les chiffre aléatoire
@@ -84,6 +90,7 @@ public class CodeGame {
         }
 
         System.out.println(strIndication);//Affiche la ligne composé de + - =
+        nombreEssai --;
 
     }
 
@@ -91,20 +98,16 @@ public class CodeGame {
      * Paramètre le nombre de chiffre a trouver
      * @param nombreUtilisateur Le nombre definit par l'utilisateur
      */
-    public void paramUtilisateur(int nombreUtilisateur) {
+    public void paramNbrChiffre(int nombreUtilisateur) {
 
         this.nombreDeChiffre = nombreUtilisateur;
-        String strNombreCache = "";//String pour rassembler tout les chiffre aléatoire
 
-        for (int i = 0; i < nombreDeChiffre; i++){//On ne dépasse pas la param utilisateur
 
-            int c = r.nextInt(9);
+    }
 
-            strNombreCache += c;//Ajoute 1 par 1 les chiffre aléatoire a la String
+    public void paramNbrEssais(int essaiUtilisateur){
 
-        }
-
-        nombreCache = Integer.parseInt(strNombreCache);//Convertit la String en Integer
+        this.nombreEssai = essaiUtilisateur;
 
     }
 

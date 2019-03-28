@@ -57,6 +57,7 @@ public class Main {
                                             do {//Boucle tans que l'on a pas trouvé le nombre secret
 
                                                 System.out.println();
+                                                System.out.println("Il vous reste "+jeu.getNombreEssai()+" essais");
                                                 System.out.println("Veuillez entrer un nombre a " + jeu.getNombreDeChiffre() + " chiffres");
                                                 System.out.println("--------------------------------------------------");
                                                 reponse = scan.nextInt();
@@ -64,10 +65,18 @@ public class Main {
                                                 System.out.println();
 
 
-                                            } while (reponse != jeu.getNombreCache());//Condition de sortie du jeu
 
-                                            System.out.println();
-                                            System.out.println("Félicitation vous avez trouvé le nombre secret !");
+                                            } while (reponse != jeu.getNombreCache() && jeu.getNombreEssai() != 0);//Condition de sortie du jeu
+
+                                            if (jeu.getNombreEssai() == 0) {
+
+                                                System.out.println();
+                                                System.out.println("Vous avez perdu ! Vous n'avez pas trouvé le code secret a temps !");
+
+                                            } else {
+                                                System.out.println();
+                                                System.out.println("Félicitation vous avez trouvé le nombre secret !");
+                                            }
                                             System.out.println();
                                             System.out.println("Voulez-vous recommencer ? O/N");
                                             scan.nextLine();
@@ -100,27 +109,47 @@ public class Main {
 
                             case 2: //Paramétrer le jeu
 
-                                System.out.println("Le nombre de chiffre a trouver est de " + jeu.getNombreDeChiffre());
-                                System.out.println("Voulez voulez vous le modifier ?");
-                                System.out.println("1 - Oui");
-                                System.out.println("2 - Non");
-                                System.out.println("--------------------------------------------------");
-                                choixMenu = scan.nextInt();
+                                do {
 
-                                if (choixMenu == 1) {
+                                    System.out.println("Que voulez vous paramétrer ?");
+                                    System.out.println("1 - Nombre de chiffre a trouver");
+                                    System.out.println("2 - Nombre d'essais");
+                                    System.out.println("5 - Retour");
+                                    System.out.println("--------------------------------------------------");
+                                    choixMenu = scan.nextInt();
 
-                                    int paramUtil;
+                                    switch (choixMenu){
+
+                                        case 1 :
+
+                                            int nombreChiffre;
+                                            System.out.println("Combien de chiffre voulez vous trouver ?");
+                                            nombreChiffre = scan.nextInt();
+                                            jeu.paramNbrChiffre(nombreChiffre);
+                                            System.out.println();
+                                            System.out.println("Vous allez chercher un nombre a "+jeu.getNombreDeChiffre()+" chiffre");
+                                            System.out.println();
+                                            break;
+
+                                        case 2 :
+
+                                            int nombreEssais;
+                                            System.out.println("Combien d'essais voudriez vous ?");
+                                            nombreEssais = scan.nextInt();
+                                            jeu.paramNbrEssais(nombreEssais);
+                                            System.out.println();
+                                            System.out.println("Vous avez maintenant "+jeu.getNombreEssai()+" essais pour trouver le code secret !");
+                                            System.out.println();
+                                            break;
+
+                                    }
+
                                     System.out.println();
-                                    System.out.println("Combien de chiffre voulez chercher ?");
-                                    paramUtil = scan.nextInt();
-                                    jeu.paramUtilisateur(paramUtil);
-                                    System.out.println("Vous aller devoir trouver " + jeu.getNombreDeChiffre() + " chiffres !");
 
-                                }
-
-                                System.out.println();
+                                } while (choixMenu != 5);//Sortir menu paramètre
 
                                 break;
+
 
                         }//Fin du switch du menu jeu
 
