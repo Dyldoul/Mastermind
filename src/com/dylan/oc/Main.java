@@ -34,35 +34,67 @@ public class Main {
 
                         switch (choixMenu) {
 
-                            case 1:// Lancement du jeu 1
+                            case 1://Menu des mode de jeux
 
-                                do {
-                                    System.out.println("NOMBRE SECRET ACTIVE");
-                                    System.out.println("Serez-vous assez fort pour le trouver ?");
+                                System.out.println("A quel mode voulez-vous jouer ?");
+                                System.out.println("1 - Mode Challenger (Vous devez trouver le nombre secret)");
+                                System.out.println("2 - Mode Défenseur (vous devez définir le code secret)");
+                                System.out.println("3 - Mode Duel (le premier qui trouve le nombre secret de l'autre a gagné)");
+                                System.out.println("---------------------------------------------------");
+                                choixMenu = scan.nextInt();
 
-                                    do {//Boucle tans que l'on a pas trouvé le nombre secret
+                                switch (choixMenu) {//Choix du mode
+
+                                    case 1:// Lancement du jeu Challenger
+
+                                        do {
+                                            System.out.println("Mode Challenger Activé");
+                                            jeu.modChallenger();
+                                            System.out.println();
+                                            System.out.println("NOMBRE SECRET ACTIVE");
+                                            System.out.println("Serez-vous assez fort pour le trouver ?");
+
+                                            do {//Boucle tans que l'on a pas trouvé le nombre secret
+
+                                                System.out.println();
+                                                System.out.println("Veuillez entrer un nombre a " + jeu.getNombreDeChiffre() + " chiffres");
+                                                System.out.println("--------------------------------------------------");
+                                                reponse = scan.nextInt();
+                                                jeu.check(reponse);
+                                                System.out.println();
+
+
+                                            } while (reponse != jeu.getNombreCache());//Condition de sortie du jeu
+
+                                            System.out.println();
+                                            System.out.println("Félicitation vous avez trouvé le nombre secret !");
+                                            System.out.println();
+                                            System.out.println("Voulez-vous recommencer ? O/N");
+                                            scan.nextLine();
+                                            String str = scan.nextLine();
+                                            exit = str.charAt(0);
+
+                                        } while (exit != 'N' && exit == 'O'); //Recommencer ou non le jeu
 
                                         System.out.println();
-                                        System.out.println("Veuillez entrer un nombre a "+jeu.getNombreDeChiffre()+" chiffres");
-                                        System.out.println("--------------------------------------------------");
-                                        reponse = scan.nextInt();
-                                        jeu.check(reponse);
+
+                                        break;
+
+                                    case 2://Lancement du jeu Défenseur
+
+                                        System.out.println("Mode Défenseur activé");
                                         System.out.println();
 
+                                        break;
 
-                                    } while (reponse != jeu.getNombreCache());//Condition de sortie du jeu
+                                    case 3://Lancement du jeu Duel
 
-                                    System.out.println();
-                                    System.out.println("Félicitation vous avez trouvé le nombre secret !");
-                                    System.out.println();
-                                    System.out.println("Voulez-vous recommencer ? O/N");
-                                    scan.nextLine();
-                                    String str = scan.nextLine();
-                                    exit = str.charAt(0);
+                                        System.out.println("Mode Duel activé");
+                                        System.out.println();
 
-                                } while (exit != 'N' && exit == 'O'); //Recommencer ou non le jeu
+                                        break;
 
-                                System.out.println();
+                                }//Fin du switch du mode
 
                                 break;
 
@@ -90,7 +122,7 @@ public class Main {
 
                                 break;
 
-                        }//Fin du switch du menu du jeu
+                        }//Fin du switch du menu jeu
 
                     } while (choixMenu != 3);//Sortir du menu du jeu CodeGame
 

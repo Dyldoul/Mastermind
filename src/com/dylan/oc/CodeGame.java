@@ -23,25 +23,31 @@ public class CodeGame {
 
 
 
-    //Constructeur
+    //Constructeurs
 
     public CodeGame() {
-
-        String strNombreCache = "";//String pour rassembler tout les chiffre aléatoire
-
-        for (int i = 0; i < nombreDeChiffre; i++){//On ne dépasse pas la param utilisateur
-
-            int c = r.nextInt(9);
-
-            strNombreCache += c;//Ajoute 1 par 1 les chiffre aléatoire a la String
-
-        }
-
-        nombreCache = Integer.parseInt(strNombreCache);//Convertit la String en Integer
 
     }
 
     //Méthodes
+
+    public void modChallenger(){
+
+            String strNombreCache = "";//String pour rassembler tout les chiffre aléatoire
+
+            for (int i = 0; i < nombreDeChiffre; i++){//On ne dépasse pas la param utilisateur
+
+                int c = r.nextInt(9);
+
+                strNombreCache += c;//Ajoute 1 par 1 les chiffre aléatoire a la String
+
+            }
+
+            nombreCache = Integer.parseInt(strNombreCache);//Convertit la String en Integer
+
+    }
+
+
 
     /**
      * Compare le nombre saisie avec le nombre caché
@@ -81,6 +87,10 @@ public class CodeGame {
 
     }
 
+    /**
+     * Paramètre le nombre de chiffre a trouver
+     * @param nombreUtilisateur Le nombre definit par l'utilisateur
+     */
     public void paramUtilisateur(int nombreUtilisateur) {
 
         this.nombreDeChiffre = nombreUtilisateur;
