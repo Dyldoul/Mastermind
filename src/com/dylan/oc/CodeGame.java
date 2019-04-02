@@ -10,6 +10,9 @@ public class CodeGame {
     private int nombreCache;//Code secret a trouvé
     private int nombreDeChiffre = 4;//Nombre de chiffre composant le nombre secret par défault
     private int nombreEssai = 10;//Nombre d'éssais par défault
+    private int valeurMin = 0;//Valeur min lors des essais de l'ordi
+    private int valeurMax = 10;//Valeur max lors des essais de l'ordi
+    private int nombreTest;//Nombre testé par l'ordi
 
 
     //Getters & Setters
@@ -24,6 +27,10 @@ public class CodeGame {
 
     public int getNombreEssai() {
         return nombreEssai;
+    }
+
+    public int getNombreTest() {
+        return nombreTest;
     }
 
     //Constructeurs
@@ -115,6 +122,26 @@ public class CodeGame {
     }
 
     /**
+     * Donne un nombre aléatoire entre 2 bornes et de longueur définie
+     */
+    public void essaiOrdi(){
+
+        String strNombreTest = "";//Voir modChallenger
+
+        for (int i = 0; i < nombreDeChiffre; i++){//Boucle pour rester dans le paramètre voulu
+
+            int c = valeurMin + r.nextInt(valeurMax - valeurMin);
+
+            strNombreTest += c;
+
+        }
+
+        nombreTest = Integer.parseInt(strNombreTest);
+        System.out.println(nombreTest);
+
+    }
+
+    /**
      * Paramètre le nombre de chiffre a trouver
      * @param nombreUtilisateur Le nombre definit par l'utilisateur
      */
@@ -125,6 +152,10 @@ public class CodeGame {
 
     }
 
+    /**
+     * Paramètre le nombre d'essais
+     * @param essaiUtilisateur Nombre d'essais voulu
+     */
     public void paramNbrEssais(int essaiUtilisateur){
 
         this.nombreEssai = essaiUtilisateur;

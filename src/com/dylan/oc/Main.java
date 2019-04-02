@@ -66,9 +66,9 @@ public class Main {
 
 
 
-                                            } while (reponse != jeu.getNombreCache() && jeu.getNombreEssai() != 0);//Condition de sortie du jeu
+                                            } while (reponse != jeu.getNombreCache() && jeu.getNombreEssai() >= 0);//Condition de sortie du jeu
 
-                                            if (jeu.getNombreEssai() == 0) {
+                                            if (jeu.getNombreEssai() < 0) {
 
                                                 System.out.println();
                                                 System.out.println("Vous avez perdu ! Vous n'avez pas trouvé le code secret a temps !");
@@ -93,6 +93,13 @@ public class Main {
 
                                         System.out.println("Mode Défenseur activé");
                                         System.out.println();
+                                        System.out.println("Veuillez entrer votre code secret à "+jeu.getNombreDeChiffre()+" chiffres :");
+                                        int codeSecret = scan.nextInt();
+                                        jeu.modDefenseur(codeSecret);
+                                        System.out.println("Votre code secret est : "+jeu.getNombreCache());
+                                        System.out.println("Votre adversaire a écrit :");
+                                        jeu.essaiOrdi();
+                                        System.out.println("Donner lui des indications !");
 
                                         break;
 
