@@ -99,7 +99,7 @@ public class Main {
                                         System.out.println("Votre code secret est : "+jeu.getNombreCache());
                                         System.out.println("Votre adversaire a écrit :");
                                         jeu.essaiOrdi();
-                                        System.out.println("Donner lui des indications !");
+                                        System.out.println("Donner lui des indications :");
 
                                         break;
 

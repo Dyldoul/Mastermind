@@ -10,8 +10,6 @@ public class CodeGame {
     private int nombreCache;//Code secret a trouvé
     private int nombreDeChiffre = 4;//Nombre de chiffre composant le nombre secret par défault
     private int nombreEssai = 10;//Nombre d'éssais par défault
-    private int valeurMin = 0;//Valeur min lors des essais de l'ordi
-    private int valeurMax = 10;//Valeur max lors des essais de l'ordi
     private int nombreTest;//Nombre testé par l'ordi
 
 
@@ -114,10 +112,13 @@ public class CodeGame {
     /**
      * L'utilisateur indique a l'ordinateur les + - =
      * @param reponseOrdi Le nombre donné par l'ordinateur
+     * @param indicationUser Indication donné par l'utilisateur
      */
-    public void checkUser(int reponseOrdi){
+    public void checkUser(int reponseOrdi, String indicationUser){
 
+        String strNbrOrdi = Integer.toString(reponseOrdi);
 
+        
 
     }
 
@@ -130,7 +131,7 @@ public class CodeGame {
 
         for (int i = 0; i < nombreDeChiffre; i++){//Boucle pour rester dans le paramètre voulu
 
-            int c = valeurMin + r.nextInt(valeurMax - valeurMin);
+            int c = r.nextInt(9);
 
             strNombreTest += c;
 
