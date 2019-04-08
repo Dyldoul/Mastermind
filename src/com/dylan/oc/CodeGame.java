@@ -116,7 +116,6 @@ public class CodeGame {
      */
     public void checkUser(int reponseOrdi, String indicationUser){
 
-        String strNbrOrdi = Integer.toString(reponseOrdi);
 
         
 

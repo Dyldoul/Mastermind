@@ -100,6 +100,8 @@ public class Main {
                                         System.out.println("Votre adversaire a écrit :");
                                         jeu.essaiOrdi();
                                         System.out.println("Donner lui des indications :");
+                                        scan.nextLine();//Vide la ligne
+                                        String indic = scan.nextLine();
 
                                         break;
 
